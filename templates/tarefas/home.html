@@ -6,7 +6,8 @@
     <title>Lista de tarefas</title>
 </head>
 <body>
-    <h1>Bem vindo, aqui estão suas tarefas!</h1>
-    <a href="{%url 'tarefas:adicionar' %}">Adicionar Tarefa</a>
+    <h1>Bem vindo ao site!</h1>
+
+    <p><a href="{% url 'tarefas:lista_tarefas' %}">➡ Ver lista de tarefas</a></p>
 </body>
 </html>
