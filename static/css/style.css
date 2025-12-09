@@ -110,6 +110,13 @@ a {
     margin: 0 auto;
 }
 
+.btn-lista:hover {
+    background-color: rgb(0, 119, 30);
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f2f4f7;
