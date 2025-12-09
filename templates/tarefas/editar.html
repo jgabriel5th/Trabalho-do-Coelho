@@ -1,16 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Lista de tarefas</title>
 <body>
+<div class="container">
     <h1>Editar Tarefa</h1>
-    <form action="" method="post">
+
+    <form method="post">
         {% csrf_token %}
-        {{form}}
-        <input type="submit" value="Enviar">
+
+        <p>
+            <label>Nome:</label><br>
+            {{ form.nome }}
+        </p>
+
+        <p>
+            <label>Descrição:</label><br>
+            {{ form.descricao }}
+        </p>
+
+        <p>
+            <label>Concluída:</label><br>
+            {{ form.completo }}
+        </p>
+
+        <br>
+
+        <button class="btn btn-adicionar" type="submit">Atualizar</button>
+        <a href="{% url 'tarefas:lista_tarefas' %}" class="btn btn-editar">Cancelar</a>
     </form>
+</div>
 </body>
 </html>

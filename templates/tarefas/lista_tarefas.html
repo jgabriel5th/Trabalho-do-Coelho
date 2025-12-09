@@ -1,6 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tarefas</title>
@@ -23,13 +25,13 @@
                 <td>{% if tarefa.completo %}Completo{% else %}Incompleto{% endif %}</td>
                 <td>{{tarefa.data_criacao}}</td>
                 <td>
-                    <a href="{% url 'tarefas:editar' tarefa.id%}">Editar</a>      
-                    <a href="{% url 'tarefas:remover' tarefa.id %}">Remover</a>
+                    <a href="{% url 'tarefas:editar' tarefa.id%}" class="btn btn-editar">Editar</a>      
+                    <a href="{% url 'tarefas:remover' tarefa.id %}" class="btn btn-remover">Remover</a>
                 </td>                    
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{%url 'tarefas:adicionar' %}">Adicionar Tarefa</a>
+    <a href="{%url 'tarefas:adicionar'%}" class='btn btn-adicionar'>Adicionar Tarefa</a>
 </body>
 </html>
